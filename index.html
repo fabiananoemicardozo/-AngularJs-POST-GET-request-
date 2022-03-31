@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="MyApp"> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <<script src="./Controller.js"></script>
+    <title>AngularJs</title>
+</head>
+<body>
+    <div ng-controller="FirstController">
+        <input type="text" ng-model="nuevoComentario.comentario">
+        <br><br>
+        <input type="text" ng-model="nuevoComentario.username">
+        <br><br>
+        <button ng-click="agregarComentario()">Agregar</button>
+        <h3>Comentarios</h3>
+        <ul>
+            <li ng-repeat="comentario in comentarios">
+                {{comentario.comentario}} - 
+                <strong>
+                    {{comentario.username}}
+                </strong>
+            </li>
+        </ul>
+    </div>
+
+    <div ng-controller="secondController">
+        <input type="text" ng-model="newPost.title">
+        <br>
+        <textarea ng-model="newPost.body">
+
+        </textarea>
+        <button ng-click="addPost()">Enviar</button>
+        <ul>
+            <li ng-repeat="post in posts">
+                <h2>{{post.title}}</h2>
+                <p>{{post.body}}</p>
+            </li>
+        </ul>
+
+    </div>
+
+
+
+</body>
+</html>
